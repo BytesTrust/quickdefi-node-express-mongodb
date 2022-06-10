@@ -32,10 +32,10 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to QuickDeFi RestApi." });
 });
 
-require("./app/routes/turorial.routes")(app);
+require("./app/routes/routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
