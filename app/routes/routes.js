@@ -4,13 +4,16 @@ module.exports = (app) => {
   var router = require("express").Router();
 
   // Create a new User
-  router.post("/", UserController.create);
+  router.post("/createUser", UserController.create);
 
   // Retrieve all User
-  router.get("/", UserController.findAll);
+  router.get("/findAllUser", UserController.findAll);
 
-  // Retrieve all published User
-  router.get("/kyc", UserController.findAllKYCVerifiy);
+  // Retrieve all kyc  User
+  router.get("/findAllKYCUser", UserController.findAllKYCVerifiy);
+
+  // Retrieve User by wallet Address
+  router.get("/findUserWalletAddress", UserController.findUserWalletAddress);
 
   // Retrieve a single User with id
   router.get("/:id", UserController.findOne);

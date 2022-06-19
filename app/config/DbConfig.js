@@ -1,3 +1,3 @@
 module.exports = {
-  url: "mongodb://localhost:27017/quickdefi_db"
+  url: "mongodb+srv://quickdefi:IoX4ym41YiCsFgDp@quickdefi.wjr1rog.mongodb.net/?retryWrites=true&w=majority",
 };
