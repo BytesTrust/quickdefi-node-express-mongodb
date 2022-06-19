@@ -1,4 +1,4 @@
-module.exports = app => {
+module.exports = (app) => {
   const UserController = require("../controllers/UserControllers.js");
 
   var router = require("express").Router();
@@ -10,7 +10,7 @@ module.exports = app => {
   router.get("/", UserController.findAll);
 
   // Retrieve all published User
-  router.get("/published", UserController.findAllPublished);
+  router.get("/kyc", UserController.findAllKYCVerifiy);
 
   // Retrieve a single User with id
   router.get("/:id", UserController.findOne);
