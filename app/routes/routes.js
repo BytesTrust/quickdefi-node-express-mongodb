@@ -14,7 +14,7 @@ module.exports = (app) => {
   router.get("/findAllKYCUser", UserController.findAllKYCVerifiy);
 
   // Retrieve User by wallet Address
-  router.get("/findUserWalletAddress", UserController.findUserWalletAddress);
+  //router.get("/findUserWalletAddress", UserController.findUserWalletAddress);
 
   // Retrieve a single User with id
   router.get("/:id", UserController.findOne);
@@ -28,9 +28,9 @@ module.exports = (app) => {
   // Create a new User
   router.delete("/", UserController.deleteAll);
 
-  router.get("prices:token", PricesControllers.getDefaultPrices);
+  router.get("/prices", PricesControllers.getDefaultPrices);
 
-  app.use("/api/UserController", router);
+  app.use("/api/", router);
 
 
 
