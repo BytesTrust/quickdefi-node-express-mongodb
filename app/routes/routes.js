@@ -1,5 +1,6 @@
 module.exports = (app) => {
   const UserController = require("../controllers/UserControllers.js");
+  const PricesControllers = require("../controllers/PricesControllers.js");
 
   var router = require("express").Router();
 
@@ -27,5 +28,10 @@ module.exports = (app) => {
   // Create a new User
   router.delete("/", UserController.deleteAll);
 
+  router.get("prices:token", PricesControllers.getDefaultPrices);
+
   app.use("/api/UserController", router);
+
+
+
 };
