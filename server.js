@@ -32,12 +32,9 @@ db.mongoose
     process.exit();
   });
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to QuickDeFi RestApi." });
-});
+app.use("/api/user",require("./app/routes/api/user"));
+app.use("/api/price",require("./app/routes/api/price"));
 
-require("./app/routes/routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8082;

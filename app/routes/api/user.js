@@ -1,7 +1,6 @@
-const UserController = require("../controllers/UserControllers.js");
-const PricesControllers = require("../controllers/PricesControllers.js");
+var router = require("express").Router();
 
-  var router = require("express").Router();
+const UserController = require("../../controllers/UserControllers.js");
 
   // simple route
   router.get("/", (req, res) => {
@@ -32,10 +31,5 @@ const PricesControllers = require("../controllers/PricesControllers.js");
   // Create a new User
   router.delete("/", UserController.deleteAll);
 
-  router.get("/prices", PricesControllers.getDefaultPrices);
 
-  app.use("/api/", router);
-
-
-
-
+module.exports =  router;
