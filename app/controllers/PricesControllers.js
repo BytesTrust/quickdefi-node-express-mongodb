@@ -7,32 +7,36 @@ const basePair = 'USDC';
 
 // get 0x best price token pair
 exports.getDefaultPrices = async (req, res) => {
+    
     if (!req.body) {
       return res.status(400).send({
         message: "Token Value cannot be empty!",
       });
     }
   
-    const token = req.params.token;
+    const token = req.query.token;
 
     const params = {
-        buyToken: 'USDC',
+        buyToken: basePair,
         sellToken: token,
         sellAmount: 0.05 * Math.pow(10, 18).toString(), // Always denominated in wei
       }
+
+      let response;
+
         //Get Default Quote
-        const getDefaultQuote = async () => {
-        let response
+        let getDefaultQuote = async () => {
         try {
-            response = await axios.get(`${URL}${qs.stringify(params)}`)
-            res.send(response);
+            console.log("Default Quote");
+            response = await axios.get(`${URL}${qs.stringify(params)}`);
+        
         } catch (err) {
             console.error(err)
         }
-        console.log("Default Quote")
-        console.log("%O",response.data)
-        console.log("%O",response.data.sources)
-
+        console.log("Default Quote");
+        console.log("%O",response.data);
+        console.log("%O",response.data.sources);
+        await res.send(response);
 
         }
         res.send(getDefaultQuote);
