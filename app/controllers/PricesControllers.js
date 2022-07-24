@@ -6,7 +6,7 @@ const basePair = 'USDC';
 
 
 // get 0x best price token pair
-exports.getDefaultPrices = (req, res) => {
+exports.getDefaultPrices = async (req, res) => {
     if (!req.body) {
       return res.status(400).send({
         message: "Token Value cannot be empty!",
@@ -25,6 +25,7 @@ exports.getDefaultPrices = (req, res) => {
         let response
         try {
             response = await axios.get(`${URL}${qs.stringify(params)}`)
+            res.send(response);
         } catch (err) {
             console.error(err)
         }

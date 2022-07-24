@@ -4,7 +4,7 @@ const UserController = require("../../controllers/UserControllers.js");
 
   // simple route
   router.get("/", (req, res) => {
-    res.json({ message: "Welcome to QuickDeFi RestApi." });
+    res.json({ message: "Welcome to QuickDeFi RestApi. User" });
   });
 
   // Create a new User

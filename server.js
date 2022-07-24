@@ -33,7 +33,7 @@ db.mongoose
   });
 
 app.use("/api/user",require("./app/routes/api/user"));
-app.use("/api/price",require("./app/routes/api/price"));
+app.use("/api/prices",require("./app/routes/api/prices"));
 
 
 // set port, listen for requests
